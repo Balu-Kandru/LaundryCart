@@ -1,6 +1,9 @@
 const mongoose=require("mongoose")
 
 const orderSchema=new mongoose.Schema({
+    userid:{
+        type:String
+    },
     email:{
         type:String
     },
@@ -32,9 +35,6 @@ const orderSchema=new mongoose.Schema({
     },
     subtotal:{
         type:Number
-    },
-    userid:{
-        type:String
     }
 })
 

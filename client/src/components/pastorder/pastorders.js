@@ -4,6 +4,7 @@ import NavBar from "../common/navbar"
 import Footer from "../common/footer"
 import Search from "../common/search"
 import { getToken } from '../../utility/utility'
+
 import { useNavigate } from "react-router-dom";
 import React, { useState,useEffect } from 'react';
 import eyeIcon from "../assests/eyeicon.svg"
@@ -44,8 +45,6 @@ const Pastorders =()=>{
         
         axios.get('http://localhost:3001/order/history',{headers:header})
         .then(function (response) {
-            
-
             setorders(response.data)
            console.log(response.data)
             }).catch((err)=> {
@@ -173,7 +172,6 @@ export default Pastorders
 //       return
 //       a
 // }
-
 
 
 

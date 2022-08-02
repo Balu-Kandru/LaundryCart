@@ -68,29 +68,30 @@ router.post("/create",(req,res)=>{
 // })
 
 
+
 router.get('/history',(req,res)=>{
-     if(req.headers.authorization) {
-            try {
-              const email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
-              orderModel.find({email:email}).then((orders)=> {
-                  res.status(200).send(orders);
-              })
-            } catch(err) {
-              res.status(403).send("User Not Authorized")
-            }
-          } else {
-              res.status(400).send("Missing Authorization token")
-          }
-    });
+    if(req.headers.authorization) {
+           try {
+             const email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
+             orderModel.find({email:email}).then((orders)=> {
+                 res.status(200).send(orders);
+             })
+           } catch(err) {
+             res.status(403).send("User Not Authorized")
+           }
+         } else {
+             res.status(400).send("Missing Authorization token")
+         }
+   });
 
 
 router.delete("/cancel/:id",(req, res)=> {
-    console.log(req.params.id)
-    orderModel.deleteOne({order_id: req.params.id}).then(()=> {
-        res.status(200).send("Order Cancelled Sucessfully")
-    }).catch((err)=> {
-        res.status(400).send(err) 
-    });
+   orderModel.deleteOne({order_id: req.params.id}).then(()=> {
+       res.status(200).send("Order Cancelled Sucessfully")
+   }).catch((err)=> {
+       res.status(400).send(err) 
+   });
 });
+
 
 module.exports=router

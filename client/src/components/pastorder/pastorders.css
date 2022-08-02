@@ -1,260 +1,190 @@
 h2{
-font: normal normal 600 17px/48px Open Sans;
-letter-spacing: 0px;
-color: black;
-margin-left: 100px;
-margin-top: 20px;
-font-family: sans-serif;
-}
-
-.goto{
-left: 1070px;
-top: -58px;
-width: 107px;
-height: 32px;
-color: #5861AE;
-cursor: pointer;
-
-/* UI Properties */
-border: 1px solid #5861AE;
-border-radius: 4px;
-opacity: 1;
-position: relative;
-}
-.page-titlebar{
-    top: 172px;
-    left: 99px;
-    width: 1293px;
-    height: 35px;
+    font: normal normal 600 17px/48px Open Sans;
+    letter-spacing: 0px;
+    color: black;
+    margin-left: 100px;
+    margin-top: 20px;
+    font-family: sans-serif;
+    }
+    
+    .goto{
+    left: 1070px;
+    top: -58px;
+    width: 107px;
+    height: 32px;
+    color: #5861AE;
+    cursor: pointer;
+    
     /* UI Properties */
-    background: #383737 0% 0% no-repeat padding-box;
-    border-radius: 3px 3px 0px 0px;
+    border: 1px solid #5861AE;
+    border-radius: 4px;
     opacity: 1;
-    position:absolute;
-}
-.page-titlebar2{
-    top: 0px;
-    left: 40px;
-    width: 1293px;
-    height: 50px;
-    /* UI Properties */
-    background: #FFFFFF 0% 0% no-repeat padding-box;
-    border: 1px solid #EAEDF0;
     position: relative;
-    opacity: 1;
-}
-.orderid{
-top: 9px;   
-left: 20px;
-width: 48px;
-height: 17px;
-/* UI Properties */
-text-align: left;
-font:11.5px sans-serif;
-letter-spacing: 0px;
-color: #FFFFFF;
-opacity: 1;
-position:relative;
-}
-
-.orderdatetime{
-    top: 9px;
-left: 130px;
-width: 108px;
-height: 17px;
-/* UI Properties */
-text-align: left;
-font:11.5px sans-serif;
-letter-spacing: 0px;
-color: #FFFFFF;
-opacity: 1;
-position:relative;
-}
-
-.StoreLocation{
-    top: 9px;
-    left: 310px;
-    width: 83px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:relative;
-}
-
-.City{
-    top: 9px;
-    left: 470px;
-    width: 22px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:relative;
-}
-
-.StorePhone{
-    top: 9px;
-    left: 590px;
-    width: 70px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:relative;
-}
-
-.TotalItems{
-    top: 9px;
-    left: 728px;
-    width: 64px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:relative;
-}
-
-.Price{
-    top: 9px;
-    left: 855px;
-    width: 29px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1; 
-    position:relative;
-}
-
-.Status{
-    top: 9px;
-    left: 964px;
-    width: 36px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:absolute;
-}
-.canc{
-    top: 9px;
-    left: 1100px;
-    width: 36px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:relative;
-}
-
-.view{
-    top: 9px;
-    left: 1230px;
-    width: 27px;
-    height: 17px;
-    /* UI Properties */
-    text-align: left;
-    font:11.5px sans-serif;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    opacity: 1;
-    position:absolute;
-}
-.orderid2{
-    top: 16px;
+    }
+    .page-titlebar{
+        top: 172px;
+        left: 99px;
+        width: 1293px;
+        height: 35px;
+        /* UI Properties */
+        background: #383737 0% 0% no-repeat padding-box;
+        border-radius: 3px 3px 0px 0px;
+        opacity: 1;
+        position:absolute;
+    }
+    .page-titlebar2{
+        top: 0px;
+        left: 40px;
+        width: 1293px;
+        height: 50px;
+        /* UI Properties */
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #EAEDF0;
+        position: relative;
+        opacity: 1;
+    }
+    .orderid{
+    top: 9px;   
     left: 20px;
-    width: 51px;
+    width: 48px;
     height: 17px;
     /* UI Properties */
     text-align: left;
     font:11.5px sans-serif;
     letter-spacing: 0px;
-    color: #1E2022;
+    color: #FFFFFF;
     opacity: 1;
-    position:absolute;
+    position:relative;
     }
     
-    .orderdatetime2{
-        top: 16px;
-        left: 130px;
-        width: 111px;
-        height: 17px;
-        /* UI Properties */
-        text-align: left;
-        font:11.5px sans-serif;
-        letter-spacing: 0px;
-        color: #1E2022;
-        opacity: 1;
-    position:absolute;
+    .orderdatetime{
+        top: 9px;
+    left: 130px;
+    width: 108px;
+    height: 17px;
+    /* UI Properties */
+    text-align: left;
+    font:11.5px sans-serif;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+    position:relative;
     }
     
-    .StoreLocation2{
-        top: 16px;
+    .StoreLocation{
+        top: 9px;
         left: 310px;
-        width: 48px;
+        width: 83px;
         height: 17px;
         /* UI Properties */
         text-align: left;
-        font:10px sans-serif;
         font:11.5px sans-serif;
-        color: #1E2022;
-        opacity: 1; 
-        position:absolute;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        position:relative;
     }
     
-    .City2{
-        top: 16px;
+    .City{
+        top: 9px;
         left: 470px;
-        width: 57px;
+        width: 22px;
         height: 17px;
         /* UI Properties */
         text-align: left;
         font:11.5px sans-serif;
         letter-spacing: 0px;
-        color: #1E2022;
-        position:absolute;
+        color: #FFFFFF;
+        opacity: 1;
+        position:relative;
     }
     
-    .StorePhone2{
-        top: 16px;
+    .StorePhone{
+        top: 9px;
         left: 590px;
-        width: 108px;
+        width: 70px;
         height: 17px;
         /* UI Properties */
         text-align: left;
         font:11.5px sans-serif;
         letter-spacing: 0px;
-        color: #1E2022;
+        color: #FFFFFF;
         opacity: 1;
-        position:absolute;
+        position:relative;
     }
     
-    .TotalItems2{
-        
-        top: 16px;
+    .TotalItems{
+        top: 9px;
         left: 728px;
-        width: 14px;
+        width: 64px;
+        height: 17px;
+        /* UI Properties */
+        text-align: left;
+        font:11.5px sans-serif;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        position:relative;
+    }
+    
+    .Price{
+        top: 9px;
+        left: 855px;
+        width: 29px;
+        height: 17px;
+        /* UI Properties */
+        text-align: left;
+        font:11.5px sans-serif;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1; 
+        position:relative;
+    }
+    
+    .Status{
+        top: 9px;
+        left: 964px;
+        width: 36px;
+        height: 17px;
+        /* UI Properties */
+        text-align: left;
+        font:11.5px sans-serif;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        position:absolute;
+    }
+    .canc{
+        top: 9px;
+        left: 1100px;
+        width: 36px;
+        height: 17px;
+        /* UI Properties */
+        text-align: left;
+        font:11.5px sans-serif;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        position:relative;
+    }
+    
+    .view{
+        top: 9px;
+        left: 1230px;
+        width: 27px;
+        height: 17px;
+        /* UI Properties */
+        text-align: left;
+        font:11.5px sans-serif;
+        letter-spacing: 0px;
+        color: #FFFFFF;
+        opacity: 1;
+        position:absolute;
+    }
+    .orderid2{
+        top: 16px;
+        left: 20px;
+        width: 51px;
         height: 17px;
         /* UI Properties */
         text-align: left;
@@ -263,62 +193,132 @@ position:relative;
         color: #1E2022;
         opacity: 1;
         position:absolute;
-    }
-    
-    .Price2{
-        top: 16px;
-        left: 855px;
-        width: 38px;
-        height: 17px;
-        /* UI Properties */
-        text-align: left;
-        font:11.5px sans-serif;
-        letter-spacing: 0px;
-        color: #5861AE;
-        opacity: 1;
-        position:relative;
-    }
-    
-    .Status2{
-        top: 16px;
-        left: 964px;
-        width: 82px;
-        height: 17px;
-        /* UI Properties */
-        text-align: left;
-        font:11.5px sans-serif;
+        }
         
-        letter-spacing: 0px;
-        color: #1E2022;
-        opacity: 1;
-        position:relative;
-    }
-    .openModalBtn{
-        top: 16px;
-        left: 1100px;
-        width: 100px;
-        height: 17px;
-        border: none;
-        cursor: pointer;
-        /* UI Properties */
-        text-align: left;
-        font:11.5px sans-serif;
-        letter-spacing: 0px;
-        background: white;
-        color: #EB1717;
+        .orderdatetime2{
+            top: 16px;
+            left: 130px;
+            width: 111px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            letter-spacing: 0px;
+            color: #1E2022;
+            opacity: 1;
+        position:absolute;
+        }
         
-        position:relative;
-    }
-    
-    .view2{
-        top: 13px;
-        left: 1230px;
-        width: 18px;
-        height: 17px;
-        /* UI Properties */
-        /* background: #000000 0% 0% no-repeat padding-box; */
-        border: 0.6000000238418579px solid #FFFFFF;
-        opacity: 1;
-        position:relative;
-    }
-    
+        .StoreLocation2{
+            top: 16px;
+            left: 310px;
+            width: 48px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:10px sans-serif;
+            font:11.5px sans-serif;
+            color: #1E2022;
+            opacity: 1; 
+            position:absolute;
+        }
+        
+        .City2{
+            top: 16px;
+            left: 470px;
+            width: 57px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            letter-spacing: 0px;
+            color: #1E2022;
+            position:absolute;
+        }
+        
+        .StorePhone2{
+            top: 16px;
+            left: 590px;
+            width: 108px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            letter-spacing: 0px;
+            color: #1E2022;
+            opacity: 1;
+            position:absolute;
+        }
+        
+        .TotalItems2{
+            
+            top: 16px;
+            left: 728px;
+            width: 14px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            letter-spacing: 0px;
+            color: #1E2022;
+            opacity: 1;
+            position:absolute;
+        }
+        
+        .Price2{
+            top: 16px;
+            left: 855px;
+            width: 38px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            letter-spacing: 0px;
+            color: #5861AE;
+            opacity: 1;
+            position:relative;
+        }
+        
+        .Status2{
+            top: 16px;
+            left: 964px;
+            width: 82px;
+            height: 17px;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            
+            letter-spacing: 0px;
+            color: #1E2022;
+            opacity: 1;
+            position:relative;
+        }
+        .openModalBtn{
+            top: 16px;
+            left: 1100px;
+            width: 100px;
+            height: 17px;
+            border: none;
+            cursor: pointer;
+            /* UI Properties */
+            text-align: left;
+            font:11.5px sans-serif;
+            letter-spacing: 0px;
+            background: white;
+            color: #EB1717;
+            
+            position:relative;
+        }
+        
+        .view2{
+            top: 13px;
+            left: 1230px;
+            width: 18px;
+            height: 17px;
+            /* UI Properties */
+            /* background: #000000 0% 0% no-repeat padding-box; */
+            border: 0.6000000238418579px solid #FFFFFF;
+            opacity: 1;
+            position:relative;
+        }
+        
