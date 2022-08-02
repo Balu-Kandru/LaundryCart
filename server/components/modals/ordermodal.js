@@ -32,6 +32,9 @@ const orderSchema=new mongoose.Schema({
     },
     subtotal:{
         type:Number
+    },
+    userid:{
+        type:String
     }
 })
 

@@ -3,7 +3,7 @@ import Header from "../common/header"
 import NavBar from "../common/navbar"
 import Footer from "../common/footer"
 import Search from "../common/search"
-import { getToken } from '../../utility/utility1'
+import { getToken } from '../../utility/utility'
 import { useNavigate } from "react-router-dom";
 import React, { useState,useEffect } from 'react';
 import eyeIcon from "../assests/eyeicon.svg"
