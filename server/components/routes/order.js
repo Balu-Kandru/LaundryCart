@@ -42,14 +42,12 @@ router.post("/create",(req,res)=>{
     if(req.headers.authorization) {
         try {
             let sum=parseInt(0)
-            let subtotal=parseInt(0)
             for(let i=0;i<req.body.producttype.length;i++){
-                sum+=req.body.producttype[i].quantity
-                subtotal+=req.body.producttype[i].total
+                sum+=req.body.producttype[i].count
             }
             const email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
             usermodal.find({email:email}).then((data)=>{
-                orderModel.create({email:data[0].email,orderid:req.body.orderid,producttype:req.body.producttype,items:sum,datetime:req.body.datetime,subtotal:subtotal})
+                orderModel.create({email:data[0].email,orderid:req.body.orderid,producttype:req.body.producttype,items:sum,datetime:req.body.datetime,subtotal:req.body.subtotal})
                 .then(()=>{
                     res.status(200).send("successfully order created")
                 }).catch((err)=>{
