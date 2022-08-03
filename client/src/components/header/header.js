@@ -13,9 +13,9 @@ export function Header(){
             </div>
             <div className="header-list-container">
                 <ul className="ul-container">
-                    <li className="home"><p>Home</p></li>
-                    <li className="pricing"><p>Pricing</p></li>
-                    <li className="career"><p>Career</p></li>
+                    <li className="home-ul"><p>Home</p></li>
+                    <li className="pricing-ul"><p>Pricing</p></li>
+                    <li className="career-ul"><p>Career</p></li>
                     <li className="ul-singin"><p onClick={gotosignin}>Sign In</p></li>
                 </ul>
             </div>
