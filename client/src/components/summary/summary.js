@@ -1,22 +1,43 @@
 import Modal from "../modals/modal";
 import React, { useState,useEffect } from 'react';
 import "./summary.css";
+import { getToken } from "../../utility/utility";
+import axios from "axios";
 
-const Summary =({closesummary})=>{
+
+const Summary =({closesummary,orders})=>{
+    console.log(orders)
     const[viewalert,setviewalert] = useState(false);
+    
     // useEffect
     // fetch
+    const cancelOrderfunc=(id)=>{
+        let token=getToken()
+        let header={Authorization:token}
+        
+        axios.delete(`http://localhost:3001/order/cancel/${id}`,{headers:header})
+        .then(function (response) {
+            console.log(response)
+            window.location.reload();
+            if(response.status===200){           
+                console.log(response.data)
+                window.location.reload();
+            
+            }
+        })
+    }
 if(viewalert){
-    return <Modal setOpenModal ={setviewalert}/>
+
+    return <Modal setOpenModal ={setviewalert} cancelOrderfunc={cancelOrderfunc} cancelid={orders._id}/>
 }
+
 return(
     <>
     <div className="sumcontainer">
         
             <div className="header">
                 <h2>Summary</h2>
-                
-            </div>
+                 </div>
             <div className="topaddress">
             <ul type="none">
                 <li className="Title">Store Address</li>
@@ -41,10 +62,27 @@ return(
                     </ul>
                 </div>
             <div className="ordersummary">
-                <p>Order Details</p>
-                <div className="totalbar">
+            {orders.producttype.map((obj,i)=>{
+                return (
+                <div className="order-details" key={i}>     
+                    <span className="item-type1">{obj.name}</span>
+                    <span className="item-method1">{obj.washType} </span>
+                    <span className="item-eq1">{obj.multiple}=</span>
+                    <span className="item-price1">{obj.price}</span>
                 </div>
+                )
+            })}
+        <span className="sec-sub1" >Sub Total:</span>
+        <span className="sec-val1">{orders.subtotal}</span>
+        <span className="pickup1" >Pickup-Charges:</span>
+        <span className="pick-val1">90</span>
+        
+        <section className="total-bar1">
+            <span className="name-total1">Total:</span>
+            <div className="total-val1">Rs {orders.subtotal+90}</div>
+        </section>
             </div>
+           
             <div className="downaddress">
                 <p> Address</p>
                 <div className="home">
@@ -53,9 +91,7 @@ return(
                     <button onClick={()=> setviewalert(true)}>Cancel order</button>
                 </div>
             </div>
-            {/* <div className="footer">
-                <button onClick={()=> setviewalert(true)}>Cancel order</button>
-            </div> */}
+           
         
     </div>
     </>

@@ -1,12 +1,12 @@
 .sumcontainer{
-    margin-top: -215px;
-    left: 444px;
+    top:0px;
+    left: 524px;
     width: 870px;
     height: 1003px;
     /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
-    position: relative;
+    position: absolute;
     
     }
     .header{
@@ -67,9 +67,10 @@
     .three{
        margin-left: 140px;
     }
-    .ordersummary p{
+    .ordersummary{
         width: 848px;
         height: 340px;
+        font-family: sans-serif;
     }
     .track{
         margin-top: 20px;
@@ -96,16 +97,109 @@
     .line{
         width: 100%;
     }
-    .totalbar{
+    .sec-sub1{
+        top: 407px;
+        left: 665px;
+        width: 74px;
+        height: 22px;
+        text-align: left;
+        font: normal normal normal 16px/22px Open Sans;
+        letter-spacing: 0.38px;
+        color: #1B2734;
+        opacity: 1;
+        position: absolute;
+        z-index: 100;
+    }
+    .sec-val1{
+        top: 405px;
+        left: 833px;
+        width: 32px;
+        height: 24px;
+        text-align: left;
+        font: normal normal 600 18px/24px Open Sans;
+        letter-spacing: 0.43px;
+        color: #272727;
+        opacity: 1;
+        position: absolute;
+        z-index: 100;
+    
+    }
+    .pickup1{
+        top: 453px;
+        left: 622px;
+        width: 124px;
+        height: 22px;
+        text-align: left;
+        font: normal normal normal 16px/22px Open Sans;
+        letter-spacing: 0.38px;
+        color: #1B2734;
+        opacity: 1;
+        position: absolute;
+        z-index: 100;
+    }
+    .pick-val1{
+        top: 453px;
+        left: 834px;
+        width: 21px;
+        height: 24px;
+        text-align: left;
+        font: normal normal 600 18px/24px Open Sans;
+        letter-spacing: 0.43px;
+        color: #272727;
+        opacity: 1;
+        position: absolute;
+        z-index: 100;
+    }
+    .order-details1{
+        margin-top: -170px;
+        margin-left: 120px;
+    }
+    .total-bar1{
+        top: 496px;
+        left: 35px;
+        width: 848px;
+        height: 49px;
+        background: #5861AE 0% 0% no-repeat padding-box;
+        opacity: 1;
+        position: absolute;
+        z-index: 100;
+    }
+    .name-total1{
+        top: 12px;
+        left: 651px;
+        width: 52px;
+        height: 24px;
+        text-align: left;
+        font: normal normal bold 18px/24px Open Sans;
+        letter-spacing: 0.43px;
+        color: #FFFFFF;
+        text-transform: capitalize;
+        opacity: 1;
+        position: relative;
+        z-index: 100;
+    }
+    .total-val1{
+        top: 7px;
+        left: 754px;
+        width: 71px;
+        height: 30px;
+        text-align: left;
+        font: normal normal bold 22px/30px Open Sans;
+        letter-spacing: 0.53px;
+        color:white;
+        opacity: 1;
+        position: absolute;
+    }
+    .totalbar1{
         width: 848px;
         height: 49px;
        margin-left: 48px;
-       margin-top: 60px;
+       margin-top: 10px;
     /* UI Properties */
         background: #5861AE;
     }
     .downaddress{
-       margin-top: 40px;
+       height: 300px;
     }
     .downaddress p{
         margin-left:50px;

@@ -9,13 +9,17 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
+/* html,body{
+  margin: 0;
+  padding: 0;
+} */
 
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-body{
+/* body{
   margin: 0px;
-}
+} */

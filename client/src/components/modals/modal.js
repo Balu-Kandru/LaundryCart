@@ -21,7 +21,7 @@ function Modal({ setOpenModal,cancelid,cancelOrderfunc }) {
             
             <div className="title">
               <img src={warningIcon}  alt="err"></img>   
-              <h1>Are you sure want to cancel the oreder No: ORD0001</h1>
+              <h1>Are you sure want to cancel the oreder No:ORD0001</h1>
            
               
               <br></br><button  onClick={() => {cancelorder(cancelid);}}>Proceed</button>

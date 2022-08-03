@@ -8,8 +8,6 @@ import { getToken } from '../../utility/utility'
 import { useNavigate } from "react-router-dom";
 import React, { useState,useEffect } from 'react';
 import eyeIcon from "../assests/eyeicon.svg"
-// import warningIcon from "../assests/warning.svg"
-// import Summary from "../Summary/summary";
 import axios from "axios";
 import Modal from "../modals/modal";
 import Summary from '../summary/summary'
@@ -19,6 +17,7 @@ const Pastorders =()=>{
         const navigate = useNavigate();
         const [modalOpen, setModalOpen] = useState(false);
         const [summ,setsumm] = useState(false);
+        const [price,setprice] =useState(null);
         const [cancelid,setcancelid] = useState("");
         const gotocreateorder = ()=>{
             navigate("/order");
@@ -45,6 +44,8 @@ const Pastorders =()=>{
         
         axios.get('http://localhost:3001/order/history',{headers:header})
         .then(function (response) {
+            
+
             setorders(response.data)
            console.log(response.data)
             }).catch((err)=> {
@@ -93,16 +94,16 @@ const Pastorders =()=>{
                   setcancelid(order._id)
                   console.log(order)
                   setModalOpen(true);
-                }}>Cancel order</button>{modalOpen && <Modal setOpenModal={setModalOpen} cancelid={cancelid} cancelOrderfunc={cancelOrderfunc} />}
-        
+                }}>Cancel order</button>
                     <img src={eyeIcon} className='view2' alt="err" onClick={() => {
+                    setprice(order)
                   setsumm(true);
-                }}></img>{summ && <Summary closesummary={setsumm} />}
+                }}></img>
         
                 </div>
                  ))} 
-        
-               
+                 {modalOpen && <Modal setOpenModal={setModalOpen} cancelid={cancelid} cancelOrderfunc={cancelOrderfunc} />}{summ && <Summary orders={price}closesummary={setsumm} />}
+                 
 
         <Footer/>
       
@@ -113,68 +114,4 @@ const Pastorders =()=>{
         
     };
 export default Pastorders
-
-
-//function PastOrder() {
-    
-//     const [orders, setOrders] = useState([]);
-//     const [summary, setSummary] = useState(false);
-//     const [cancelOrder, setCancelOrder] = useState(false);
-//     const [cancelOrderIndex, setcancelOrderIndex] = useState();
-//     const [Alert, AlertWrong] = useState(false)
-//     const getData=()=>{
-//         const authToken = localStorage.getItem("authorization");
-        
-//         axios.get('http://localhost:3001/order/history', {
-//             headers: {
-//                 authorization: authToken
-//             }
-//         }).then(function (response) {
-//             this.setState({posts:response.data.posts.reverse()})//queue order sort
-//             setOrders(response.data.order)
-//             console.log(response.data)
-//         })
-//         .catch(function (error) {
-//             AlertWrong(true)
-//             // handle error
-//             console.log(error);
-//         })
-    
-//     }
-//     const cancelOrderfunc=()=>{
-//         const authToken = localStorage.getItem("authorization");   
-//         let body={
-//             id:orders[cancelOrderIndex]._id
-//         }
-        
-//         axios.post('http://localhost:3001/order/cancel/:id', {
-//             headers: {
-//                 authorization: authToken
-//             }
-//         }).then(function (response) {
-//             console.log(response)
-//             if(response.status===200){           
-//                 console.log(response.data)
-//                 getData()
-            
-//             }
-//         })
-//         .catch(function (error) {
-//             setWentWrong(true)
-//             // handle error
-//             console.log(error);
-//         })
-//     }
-
-//     useEffect(() => {
-//         getData()
-//       },[]);
-//       return
-//       a
-// }
-
-
-
-
-
 

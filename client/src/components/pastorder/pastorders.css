@@ -34,7 +34,7 @@ h2{
     }
     .page-titlebar2{
         top: 0px;
-        left: 40px;
+        left: 99px;
         width: 1293px;
         height: 50px;
         /* UI Properties */
@@ -59,7 +59,7 @@ h2{
     
     .orderdatetime{
         top: 9px;
-    left: 130px;
+    left: 104px;
     width: 108px;
     height: 17px;
     /* UI Properties */
@@ -73,7 +73,7 @@ h2{
     
     .StoreLocation{
         top: 9px;
-        left: 310px;
+        left: 201px;
         width: 83px;
         height: 17px;
         /* UI Properties */
@@ -87,7 +87,7 @@ h2{
     
     .City{
         top: 9px;
-        left: 470px;
+        left: 290px;
         width: 22px;
         height: 17px;
         /* UI Properties */
@@ -101,7 +101,7 @@ h2{
     
     .StorePhone{
         top: 9px;
-        left: 590px;
+        left: 400px;
         width: 70px;
         height: 17px;
         /* UI Properties */
@@ -115,7 +115,7 @@ h2{
     
     .TotalItems{
         top: 9px;
-        left: 728px;
+        left: 483px;
         width: 64px;
         height: 17px;
         /* UI Properties */
@@ -129,7 +129,7 @@ h2{
     
     .Price{
         top: 9px;
-        left: 855px;
+        left: 570px;
         width: 29px;
         height: 17px;
         /* UI Properties */
@@ -143,7 +143,7 @@ h2{
     
     .Status{
         top: 9px;
-        left: 964px;
+        left: 664px;
         width: 36px;
         height: 17px;
         /* UI Properties */
@@ -152,11 +152,11 @@ h2{
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 1;
-        position:absolute;
+        position:relative;
     }
     .canc{
         top: 9px;
-        left: 1100px;
+        left: 720px;
         width: 36px;
         height: 17px;
         /* UI Properties */
@@ -170,7 +170,7 @@ h2{
     
     .view{
         top: 9px;
-        left: 1230px;
+        left: 817px;
         width: 27px;
         height: 17px;
         /* UI Properties */
@@ -179,7 +179,7 @@ h2{
         letter-spacing: 0px;
         color: #FFFFFF;
         opacity: 1;
-        position:absolute;
+        position:relative;
     }
     .orderid2{
         top: 16px;
@@ -197,7 +197,7 @@ h2{
         
         .orderdatetime2{
             top: 16px;
-            left: 130px;
+            left: 145px;
             width: 111px;
             height: 17px;
             /* UI Properties */
@@ -211,7 +211,7 @@ h2{
         
         .StoreLocation2{
             top: 16px;
-            left: 310px;
+            left: 340px;
             width: 48px;
             height: 17px;
             /* UI Properties */
@@ -225,7 +225,7 @@ h2{
         
         .City2{
             top: 16px;
-            left: 470px;
+            left: 500px;
             width: 57px;
             height: 17px;
             /* UI Properties */
@@ -238,7 +238,7 @@ h2{
         
         .StorePhone2{
             top: 16px;
-            left: 590px;
+            left: 630px;
             width: 108px;
             height: 17px;
             /* UI Properties */
@@ -253,7 +253,7 @@ h2{
         .TotalItems2{
             
             top: 16px;
-            left: 728px;
+            left: 790px;
             width: 14px;
             height: 17px;
             /* UI Properties */
@@ -267,7 +267,7 @@ h2{
         
         .Price2{
             top: 16px;
-            left: 855px;
+            left: 920px;
             width: 38px;
             height: 17px;
             /* UI Properties */
@@ -276,12 +276,12 @@ h2{
             letter-spacing: 0px;
             color: #5861AE;
             opacity: 1;
-            position:relative;
+            position:absolute;
         }
         
         .Status2{
             top: 16px;
-            left: 964px;
+            left: 1020px;
             width: 82px;
             height: 17px;
             /* UI Properties */
@@ -291,11 +291,11 @@ h2{
             letter-spacing: 0px;
             color: #1E2022;
             opacity: 1;
-            position:relative;
+            position:absolute;
         }
         .openModalBtn{
             top: 16px;
-            left: 1100px;
+            left: 1120px;
             width: 100px;
             height: 17px;
             border: none;
@@ -307,18 +307,19 @@ h2{
             background: white;
             color: #EB1717;
             
-            position:relative;
+            position:absolute;
         }
         
         .view2{
             top: 13px;
-            left: 1230px;
+            left: 1235px;
             width: 18px;
             height: 17px;
             /* UI Properties */
             /* background: #000000 0% 0% no-repeat padding-box; */
             border: 0.6000000238418579px solid #FFFFFF;
             opacity: 1;
-            position:relative;
+            position:absolute;
         }
         
+    

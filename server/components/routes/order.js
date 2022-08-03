@@ -7,38 +7,6 @@ const jwt = require("jsonwebtoken");
 
 const router=express.Router()
 
-
-// const productList={
-//                 type:[
-//                     {
-//                         "name":"Shirts",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },
-//                     {
-//                         "name":"T Shirts",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },{
-//                         "name":"Trousers",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },{
-//                         "name":"Jeans",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },{
-//                         "name":"Boxers",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },{
-//                         "name":"Joggers",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },{
-//                         "name":"Others",
-//                         "description":"Lorem Ipsum is simply dummy text"
-//                     },
-//                 ]
-// }           
-
-
-
-
 router.post("/create",(req,res)=>{
     if(req.headers.authorization) {
         try {
@@ -63,24 +31,19 @@ router.post("/create",(req,res)=>{
     }
 })
 
-// router.get("/show",(req,res)=>{
-//     res.status(200).send(productList)
-// })
-
-
 
 router.get('/history',(req,res)=>{
     if(req.headers.authorization) {
            try {
              const email = jwt.verify(req.headers.authorization, process.env.SECRET_KEY);
              orderModel.find({email:email}).then((orders)=> {
-                 res.status(200).send(orders);
+                res.status(200).send(orders);
              })
            } catch(err) {
-             res.status(403).send("User Not Authorized")
+            res.status(403).send("User Not Authorized")
            }
          } else {
-             res.status(400).send("Missing Authorization token")
+            res.status(400).send("Missing Authorization token")
          }
    });
 
