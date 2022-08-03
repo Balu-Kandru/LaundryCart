@@ -16,7 +16,8 @@ const Register = ()=>{
         event.preventDefault();
         console.log(registerState);
         axios.post("http://localhost:3001/user/register",registerState).then((res)=>{
-            console.log(res)
+            // console.log(res)
+            alert("successfully registered")
         }).catch((err)=>{
             console.log(err)
         })
