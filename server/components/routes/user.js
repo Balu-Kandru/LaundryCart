@@ -22,8 +22,11 @@ router.get("/register",(req,res)=>{
 });
 
 router.post("/register", async (req, res)=> {
-    if(await checkExistingUser(req.body.name)) {
-        res.status(400).send("Username exist. Please try with different username");
+    if(await checkExistingUser(req.body.email)) {
+        res.status(400).send("Email exist. Please try with different Email-ID");
+    }
+    else if (await checkExistingUser(req.body.phone)){
+        res.status(401).send("Phone Number exist. Please try with different Phone Number");
     }
     else {
         generatePasswordHash(req.body.password).then((passwordHash)=> {
@@ -36,10 +39,10 @@ router.post("/register", async (req, res)=> {
                                 state: req.body.state,
                                 pincode: req.body.pincode
                             })
-                            .then(()=> { 
+                            .then((req)=> { 
                                 res.status(200).send(`${req.body.name} added successfully`); 
                             }).catch((err)=> {
-                                res.status(400).send(err.message)
+                                res.status(403).send(err.message)
             })
         });
     }

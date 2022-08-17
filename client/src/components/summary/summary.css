@@ -1,12 +1,17 @@
 .sumcontainer{
     top:0px;
-    left: 524px;
-    width: 870px;
-    height: 1003px;
+    left: 510px;
+    width: 926px;
+    height: 933px;
     /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
     position: absolute;
+    z-index: 100;
+    -webkit-box-shadow: -6px 0px 21px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -6px 0px 21px -6px rgba(0,0,0,0.75);
+    box-shadow: -6px 0px 21px -6px rgba(0,0,0,0.75);
+    
     
     }
     .header{
@@ -18,15 +23,27 @@
     /* UI Properties */
     background: #5861AE 0% 0% no-repeat padding-box;
     opacity: 1;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
     
     }
-    .header h2{
+    .header-h2{
         color: #FFFFFF;
         margin-left: 20px;
+        margin-top: 7px;
+        font-family: sans-serif;
+        
+        
+    }
+    .header-h{
+        color: #FFFFFF;
+        margin-right: 20px;
+        margin-top: 7px;
         font-family: sans-serif;
         
     }
-        
+  
     .topaddress{
         top: 72px;
         left: 514px;
@@ -75,6 +92,8 @@
     .track{
         margin-top: 20px;
         height: 67px;
+        width: 870px;
+        z-index: 100;
         background-color: #FFFFFF;
         border-bottom: 2px solid rgb(168, 168, 168);
     }
@@ -98,7 +117,7 @@
         width: 100%;
     }
     .sec-sub1{
-        top: 407px;
+        top: 507px;
         left: 665px;
         width: 74px;
         height: 22px;
@@ -111,7 +130,7 @@
         z-index: 100;
     }
     .sec-val1{
-        top: 405px;
+        top: 505px;
         left: 833px;
         width: 32px;
         height: 24px;
@@ -125,7 +144,7 @@
     
     }
     .pickup1{
-        top: 453px;
+        top: 553px;
         left: 622px;
         width: 124px;
         height: 22px;
@@ -138,7 +157,7 @@
         z-index: 100;
     }
     .pick-val1{
-        top: 453px;
+        top: 553px;
         left: 834px;
         width: 21px;
         height: 24px;
@@ -155,7 +174,7 @@
         margin-left: 120px;
     }
     .total-bar1{
-        top: 496px;
+        top: 596px;
         left: 35px;
         width: 848px;
         height: 49px;
@@ -200,6 +219,7 @@
     }
     .downaddress{
        height: 300px;
+
     }
     .downaddress p{
         margin-left:50px;
@@ -226,6 +246,7 @@
         margin-bottom:3px;
     }
     .footer{
+
         margin-top: 60px;
         width: 926px;
     height: 70px;
@@ -234,22 +255,40 @@
     box-shadow: 0px -3px 6px #00000015;
     opacity: 1;
     color: white;
-    }
-    .downaddress button{
-        width: 150px;
-        padding-bottom: 40px;
-    height: 42px;
-    color: #FFFFFF;
-    padding: 0%;
-    /* UI Properties */
-    background: #F41313 0% 0% no-repeat padding-box;
-    border-radius: 4px; 
-    font-family: sans-serif;
-    border-color: none;
-    opacity: 1;
+
     
-        margin-left: 700px;
     }
+    
+    
+    .btn-bar1{
+        top: 933px;
+        left: 0px;
+        width: 926px;
+        height: 85px;
+        /* UI Properties */
+        background: #F4F4F4 0% 0% no-repeat padding-box;
+        box-shadow: 0px -3px 6px #00000015;
+        opacity: 1;
+        position: absolute;
+        z-index: 100;
+        -webkit-box-shadow: -5px 3px 21px -6px rgba(0,0,0,0.75);
+        -moz-box-shadow: -5px 3px 21px -6px rgba(0,0,0,0.75);
+        box-shadow: -5px 3px 21px -6px rgba(0,0,0,0.75);
+    }
+    .btn-confirm1{
+        top: 14px;
+        left: 740px;
+        width: 150px;
+        height: 42px;
+        background: #5861AE 0% 0% no-repeat padding-box;
+        border-radius: 4px;
+        border:none ;
+        opacity: 1;
+        color: #FFFFFF;
+        position: absolute;
+    background: #F41313 0% 0% no-repeat padding-box;
+    }
+    
     .topaddress li{
     /* UI Properties */
     text-align: left;

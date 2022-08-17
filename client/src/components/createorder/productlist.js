@@ -76,7 +76,7 @@ const Productlist=()=>{
                 productList.type.map((content,i)=>{
                     
                     return(
-                        <Items content={content} key={i} state={state} setState={setState} />
+                        <Items content={content} mykey={i} state={state} setState={setState} />
                     )
 
                 })

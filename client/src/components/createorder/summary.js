@@ -11,7 +11,7 @@ const Summary=(props)=>{
         //const time=new Date()
         
         axios({
-            url: "http://localhost:3001/order/create",
+            url: "https://laundry-cart-server.herokuapp.com/order/create",
             method: "POST",
             headers: {
                 "authorization":localStorage.authorization
@@ -37,6 +37,7 @@ const Summary=(props)=>{
     const [add, setAdd]=useState(false)
     return props.trigger ? (
         <>
+        <div id="for-black"></div>
         <div className="summary-page">
         <div className="summary-header">
             <h2 className="header-sum" >Summary</h2>

@@ -122,8 +122,8 @@ const Items=({content,state,setState})=>{
       setState([...newState, data]);
     }, [quantity * count]);
   
-    const handlereset = () => {
-      setquantity(0);
+    const handlereset = (e) => {
+      // setquantity(0);
       setwashSelected(washNormal);
       setironingSelected(ironingNormal);
       settowelSelected(towelNormal);
@@ -131,7 +131,7 @@ const Items=({content,state,setState})=>{
     };
     return (
         <>
-        <div className='product-item'>
+        <div className='product-item' >
         <div className='name-des'>
           <img className='product-img' src={content.image} alt=""/>
         </div>
@@ -142,7 +142,7 @@ const Items=({content,state,setState})=>{
         <div>
           <input className='product-quantity' type='number' min={1}  onChange={(e) => {setquantity(e.target.value)}}/>
         </div>
-        <div className="name-de">
+        <div className="name-de" >
             <img className='wash-img'  src={washSelected} alt='washing_machine' onClick={() => setwashSelected(washSelected === washBlue ? washNormal : washBlue)}/>
             <img className='iron-img' src={ironingSelected} alt='ironing' onClick={() => setironingSelected(ironingSelected === ironingBlue ? ironingNormal : ironingBlue)}/>
             <img  className='fold-img' src={towelSelected} alt='towel' onClick={() =>settowelSelected(towelSelected === towelBlue ? towelNormal : towelBlue)}/>
@@ -152,7 +152,7 @@ const Items=({content,state,setState})=>{
           {quantity  * count ? (`${quantity}X${count}=${quantity * count}`) : ('—')}
         </div>
         <div className='main-btn'>
-          {quantity * count ? <button className='btn-reset' onClick={handlereset}>Reset</button> : "" }
+          {quantity * count ? <button className='btn-reset'  onClick={handlereset}>Reset</button> : "" }
         </div>
       </div>
         </>

@@ -30,9 +30,7 @@ const Signin = ()=>{
     
     const handleLogin = (event)=>{
         event.preventDefault();;
-        console.log(signupState);
-        axios.post("http://localhost:3001/user/login",signupState).then((logindata)=>{
-            console.log(logindata.data)
+        axios.post("https://laundry-cart-server.herokuapp.com/user/login",signupState).then((logindata)=>{
             localStorage.setItem("authorization",logindata.data.authToken);
             navigate("/order/history")
         }).catch((err)=>{
@@ -66,7 +64,7 @@ const Signin = ()=>{
             <button className="register-button" onClick={gotoregister}>Register</button>
 
             </div>
-        </section>
+        </section> 
         <section className="signin-container-2">
             <div className="signin-card">
                 <div className="signin-text">

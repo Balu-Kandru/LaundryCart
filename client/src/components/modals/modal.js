@@ -3,7 +3,6 @@ import "./modal.css";
 import warningIcon from "../assests/warning.svg"
 function Modal({ setOpenModal,cancelid,cancelOrderfunc }) {
   const cancelorder=(cancelid)=>{
-      console.log(cancelid)
       cancelOrderfunc(cancelid)
       setOpenModal(false)
   }

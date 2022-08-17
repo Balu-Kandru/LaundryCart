@@ -1,11 +1,14 @@
 .header-main{
-    top: 0px;
-    left: 0px;
+    top: -11px;
+    left: -7px;
     width: 995px;
     height: 80px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 2px 48px #0000000F;
     opacity: 1;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    z-index: 1;
+    position: relative;
 }
 .header-logo{
     display: block;
@@ -24,6 +27,7 @@
     text-transform: uppercase;
     opacity: 1;
     position: relative;
+    
 }
 .header-btn{
     display: inherit;
@@ -35,39 +39,37 @@
     float: right;
 }
 .header-price{
-    top: 13px;
-    left: 995px;
+    top: -42px;
+    /* left: 995px; */
     width: 113px;
-    height: 78px;
+    height: 80px;
 /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
     list-style: none;
     position: absolute;
-    border-top: 1px solid rgba(0, 0, 0, .1);
-    border-left: 1px solid rgba(0, 0, 0, .1);
-    border-right: 1px solid rgba(0, 0, 0, .1);
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-left:1px solid rgba(0, 0, 0, .1);
+    border-bottom:1px solid rgba(0, 0, 0, .1);
 }
 .header-career{
-    top: 13px;
+    top: -42px;
     left: 1110px;
     width: 113px;
-    height: 78px;
+    height: 80px;
 /* UI Properties */
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
     list-style: none;
-    border-top: 1px solid rgba(0, 0, 0, .1);
+    /* border-top: 1px solid rgba(0, 0, 0, .1); */
     border-left: 1px solid rgba(0, 0, 0, .1);
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     position: absolute;
 }
 .header-username{
-    top: 13px;
+    top: -42px;
     left: 1220px;
     width: 214px;
-    height: 79px;
+    height: 80px;
     display: flex;
     background: #5861AE 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
@@ -78,7 +80,7 @@
 }
 .header-img{
     margin: 10px;
-    height: 43px;
+    height: 33px;
     align-self: center;
     border-radius: 50%;
 }
@@ -88,7 +90,8 @@
 }
 .logout-logo{
     margin: 10px;
-    height: 30px;
+    margin-left: 15px;
+    height: 25px;
     align-self: center;
     cursor: pointer;
 }

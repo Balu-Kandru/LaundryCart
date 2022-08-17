@@ -14,14 +14,16 @@ const Register = ()=>{
     }
     const handleLogin = (event)=>{
         event.preventDefault();
-        console.log(registerState);
-        axios.post("http://localhost:3001/user/register",registerState).then((res)=>{
-            // console.log(res)
-            alert("successfully registered")
+        axios.post("https://laundry-cart-server.herokuapp.com/user/register",registerState).then((res)=>{
+                alert("successfully registered")
+                navigate("/")
         }).catch((err)=>{
-            console.log(err)
+            if(err.response.status==403){
+                alert("please enter all the details")
+            }else{
+                alert(err.response.data)
+            }
         })
-        navigate("/")
     }
     return(
         <>
@@ -50,7 +52,7 @@ const Register = ()=>{
                 <hr className="hr3"></hr>
                 </div>
                  <div className="register-email-input-section">
-                    <input id="email1" type="email1" placeholder="Email" className="register-email-input-section-email" onChange={(e)=>{setregisterState({...registerState, email: e.target.value})}}/>
+                    <input id="email1" type="email" placeholder="Email" className="register-email-input-section-email" onChange={(e)=>{setregisterState({...registerState, email: e.target.value})}}/>
                     <hr className="hr4"></hr>   
                 </div>
                 <div className="register-phone-input-section">
@@ -78,7 +80,7 @@ const Register = ()=>{
                     <hr className="hr10"></hr>
                 </div>
                 <div className="register-checkbox-input-section">
-                    <input  id="checkbox-register" type="checkbox"/>
+                    <input  id="checkbox-register"  type="checkbox" />
                     <label htmlFor="checkbox-register" className="checkbox-text">I agree to Terms & Condition receiving marketing and promotional materials</label>
                 </div>
             </form>

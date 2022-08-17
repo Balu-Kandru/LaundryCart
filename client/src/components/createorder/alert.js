@@ -8,6 +8,7 @@ const OrderSucess = () => {
   const navigate=useNavigate()
   return (
     <>
+    <div id="for-black"></div>
     <div className="success-page">
       <img className="success-img" src={img} alt=""/>
       <div className="success-status">Your order is successfully.</div>

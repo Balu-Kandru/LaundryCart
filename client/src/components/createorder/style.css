@@ -72,11 +72,21 @@
     opacity: 1;
     position: absolute;
 }
+#for-black{
+    top:0px;
+    left: 0px;
+    z-index: 100;
+    background-color: #1B2734;
+    opacity: 0.2;
+    height: 980px;
+    width:1400px;
+    position: absolute;
+}
 .summary-page{
-    top: 13px;
+    top: 0px;
     left: 516px;
     width: 926px;
-    height: 953px;
+    height: 1019px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
     position: absolute;

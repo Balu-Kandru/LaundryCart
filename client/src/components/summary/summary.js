@@ -6,7 +6,6 @@ import axios from "axios";
 
 
 const Summary =({closesummary,orders})=>{
-    console.log(orders)
     const[viewalert,setviewalert] = useState(false);
     
     // useEffect
@@ -15,12 +14,9 @@ const Summary =({closesummary,orders})=>{
         let token=getToken()
         let header={Authorization:token}
         
-        axios.delete(`http://localhost:3001/order/cancel/${id}`,{headers:header})
+        axios.delete(`https://laundry-cart-server.herokuapp.com/order/cancel/${id}`,{headers:header})
         .then(function (response) {
-            console.log(response)
-            window.location.reload();
             if(response.status===200){           
-                console.log(response.data)
                 window.location.reload();
             
             }
@@ -33,11 +29,13 @@ if(viewalert){
 
 return(
     <>
-    <div className="sumcontainer">
+    <div id='for-black'></div>
+    <div className="sumcontainer" >
         
             <div className="header">
-                <h2>Summary</h2>
-                 </div>
+                <h2 className="header-h2">Summary</h2>
+                <h2 className="header-h" onClick={() => closesummary(false)} >X</h2>
+            </div>
             <div className="topaddress">
             <ul type="none">
                 <li className="Title">Store Address</li>
@@ -51,7 +49,6 @@ return(
                 <li className="Title">Phone</li>
                 <li className="tval">91-989898989</li>
             </ul>
-            <button  className="close" onClick={() => closesummary(false)}> X </button>
             </div>
             <div className="track">
                     <ul type="none" className="track_v">
@@ -72,6 +69,7 @@ return(
                 </div>
                 )
             })}
+
         <span className="sec-sub1" >Sub Total:</span>
         <span className="sec-val1">{orders.subtotal}</span>
         <span className="pickup1" >Pickup-Charges:</span>
@@ -88,7 +86,9 @@ return(
                 <div className="home">
                     <p className="home1"><strong>Home</strong></p>
                     <p>#223, 10th road, Jp Nagar, Bangalore</p>
-                    <button onClick={()=> setviewalert(true)}>Cancel order</button>
+                </div>
+                <div className="btn-bar1" >
+                     <button className="btn-confirm1" onClick={()=> setviewalert(true)}>Cancel order</button>
                 </div>
             </div>
            

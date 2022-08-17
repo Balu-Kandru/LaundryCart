@@ -80,6 +80,7 @@
         position: absolute;
         border-style: none;
         background:white;
+        cursor: pointer;
     }
     .right-register-container {
         top: 100px;
@@ -271,6 +272,7 @@
         border-radius: 3px;
         opacity: 1;
         position: absolute;
+        cursor: pointer;
     }
 
 
@@ -287,6 +289,7 @@
     color: #5861AE;
     opacity: 1;
     position: absolute;
+    cursor: pointer;
 }
 .register-button-container {
     top: 690px;
@@ -313,6 +316,7 @@
     opacity: 1;
     background: #5861AE 0% 0% no-repeat padding-box;
     position: absolute;
+    cursor: pointer;
 }
 #password1 {
     top: 503px;
