@@ -7,11 +7,12 @@ function Modal({ setOpenModal,cancelid,cancelOrderfunc }) {
       setOpenModal(false)
   }
     return (
-        <div className="modalBackground">
+      <>
+
+        <div id="for-black"></div>
           <div className="modalContainer">
-            
             <div className="titleCloseBtn">
-            <h3>Alert</h3>
+              <h3>Alert</h3>
               <button
                 onClick={() => {
                   setOpenModal(false);
@@ -21,12 +22,10 @@ function Modal({ setOpenModal,cancelid,cancelOrderfunc }) {
             <div className="title">
               <img src={warningIcon}  alt="err"></img>   
               <h1>Are you sure want to cancel the oreder No:ORD0001</h1>
-           
-              
               <br></br><button  onClick={() => {cancelorder(cancelid);}}>Proceed</button>
-              </div>
+            </div>
           </div>
-        </div>
+          </>
       );
     }
     
