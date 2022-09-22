@@ -52,9 +52,9 @@ const productList={
 
 const Productlist=()=>{
     const navigate =useNavigate()
-    const [summpage, setsummpage]=useState(false)
+    const [summpage, setsummpage]=useState(false)//summary
     const [state,setState]=useState([])
-    const [confirm,setconfirm]=useState(false)
+    const [confirm,setconfirm]=useState(false)//alert
 
     const subtotal=state.reduce((v,obj)=>v +obj.price,0)
 

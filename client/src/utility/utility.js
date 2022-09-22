@@ -24,6 +24,15 @@ const Protected = ({children})=> {
         </>
     )
 }
- 
 
-export {isAuthenticated,getToken,Protected}
+const Isuserloggedin = ({children})=> {
+    const token = localStorage.getItem("authorization");
+    //""
+    return (
+        <>
+        {token.length ? <Navigate to="/order/history"/>:children}
+        </>
+    )
+}
+
+export {isAuthenticated,getToken,Protected,Isuserloggedin}

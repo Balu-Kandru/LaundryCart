@@ -6,8 +6,8 @@ const Summary=(props)=>{
 
     const handlesubmit=()=>{
         if(add){
-            props.setconfirm(true); 
-        props.setTrigger(false) ;
+            props.setconfirm(true);//alert
+            props.setTrigger(false) ;//summary
         //const time=new Date()
         
         axios({
@@ -71,9 +71,15 @@ const Summary=(props)=>{
         
         <section className="total-bar">
             <span className="name-total">Total:</span>
-            <div className="total-val">Rs {props.subtotal+90}</div>
+            <div className="total-val">{props.subtotal+90} rs</div>
         </section>
         <div className="user-add">Address</div>
+        <div className="useraddress">
+            <div className="home">
+                <p style={{textAlign:"left"}}><strong>Home</strong></p>
+                <p>#223, 10th road, Jp Nagar, Bangalore</p>
+            </div>
+        </div>
         <div className="btn-bar" >
             <button className="btn-confirm" onClick={handlesubmit} >Confirm</button>
         </div>

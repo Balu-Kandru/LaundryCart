@@ -7,13 +7,13 @@ import towelNormal from "../assests/towel.svg"
 import towelBlue from "../assests/towels.svg"
 import bleachNormal from "../assests/bleach.svg"
 import bleachBlue from "../assests/bleach (1).svg"
-const Items=({content,state,setState})=>{
+const Items=({content,state,setState,mykey})=>{
     const [quantity, setquantity] = useState(0);
     const [washSelected, setwashSelected] = useState(washNormal);
     const [ironingSelected, setironingSelected] = useState(ironingNormal);
     const [towelSelected, settowelSelected] = useState(towelNormal);
     const [bleachSelected, setbleachSelected] = useState(bleachNormal);
-  
+
     let count = 0;
     if (washSelected === washBlue){
       if(content.name==="Shirts"){
@@ -107,7 +107,7 @@ const Items=({content,state,setState})=>{
   
       const data = {
         name: content.name,
-        washType: `${washSelected === washBlue ? 'Washing ' : ''}${ironingSelected === ironingBlue ? ',Ironing ' : ''}${towelSelected === towelBlue ? ',DryCleaning ' : ''}${bleachSelected === bleachBlue ? ',Bleaching ' : ''}`,
+        washType: `${washSelected === washBlue ? 'Washing ' : ''}${ironingSelected === ironingBlue ? ' Ironing ' : ''}${towelSelected === towelBlue ? ' Drycleaning ' : ''}${bleachSelected === bleachBlue ? ' Bleaching ' : ''}`,
         multiple: `${quantity}X${count}`,
         price: quantity * count,
         count: Number(quantity),
@@ -128,10 +128,11 @@ const Items=({content,state,setState})=>{
       setironingSelected(ironingNormal);
       settowelSelected(towelNormal);
       setbleachSelected(bleachNormal);
+      console.log(e)
     };
     return (
         <>
-        <div className='product-item' >
+        <div className='product-item' key={mykey} >
         <div className='name-des'>
           <img className='product-img' src={content.image} alt=""/>
         </div>
@@ -140,7 +141,16 @@ const Items=({content,state,setState})=>{
             <h4 className='product-des'>{content.description}</h4>
         </div>
         <div>
-          <input className='product-quantity' type='number' min={1}  onChange={(e) => {setquantity(e.target.value)}}/>
+          {
+
+          }
+          <input className='product-quantity' type='number' min={1}  onChange={(e) => {            
+            if ( e.target.value.includes("-") || e.target.value.includes(".")){
+              e.target.value=null
+            }
+            else{
+              setquantity(Math.abs(e.target.value))
+            }} }/>
         </div>
         <div className="name-de" >
             <img className='wash-img'  src={washSelected} alt='washing_machine' onClick={() => setwashSelected(washSelected === washBlue ? washNormal : washBlue)}/>

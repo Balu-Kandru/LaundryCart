@@ -11,6 +11,7 @@ const Signin = ()=>{
     const [signupState,setSignupstate] = useState({})
     const [passwordShown,setPasswordShown] = useState(false);
     const [err,setErr] = useState(false);
+    const [passerr,setpasserr]=useState(false)
     const navigate = useNavigate();
     const gotoregister = ()=>{
         navigate("/register");
@@ -18,12 +19,12 @@ const Signin = ()=>{
     const checktheuser = (e)=>{
         if(e.target.value.includes("@")){
             setSignupstate({...signupState,email: e.target.value})
-            console.log(e.target.value);
+            //console.log(e.target.value);
         }
         else{
             setSignupstate({...signupState, phone: e.target.value});
             // e.target.value.style.color = "red";
-            console.log(e.target.value);
+            //console.log(e.target.value);
         }
     }
 
@@ -35,9 +36,12 @@ const Signin = ()=>{
             navigate("/order/history")
         }).catch((err)=>{
             // alert("your email/phonenumber unauthorized");
-            setErr(true);
-            
-            
+            if(err.response.status===401){
+                setpasserr(true)
+            }else{
+                setErr(true);
+            }
+            console.log(err)
             }
         )
     }
@@ -73,8 +77,8 @@ const Signin = ()=>{
                 <div className="vl"></div>
                 <form>
                 <div className="input-section" style={{position: "relative"}}>
-                        <input id="email" type="text" style={{color: "red"}} placeholder="Mobile/Email" onChange={(e)=>{checktheuser(e)}}/>
-                        {err && <p className="input-section-error-state">Please enter a valid phone number</p>}
+                        <input id="email" type="text" style={{color: "black"}} placeholder="Mobile/Email" onChange={(e)=>{checktheuser(e)}}/>
+                        {err && <p className="input-section-error-state">Please enter a valid Phone number/Email-ID</p>}
                         <hr className="hr1"></hr>
                 </div>
                 <div className="password-section">
@@ -82,6 +86,7 @@ const Signin = ()=>{
                     <hr className="hr2"></hr>
                 </div>
                 <div className="forgot-password">
+                    {passerr && <p className="pass11">Please enter a valid Password</p>}
                     <p className="pass12">Forgot Password?</p>
                 </div>
 

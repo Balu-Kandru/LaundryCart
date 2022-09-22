@@ -8,22 +8,32 @@ import "../register/register.css";
 import { useState } from "react";
 const Register = ()=>{
     const [registerState,setregisterState] = useState({});
+    const [Terms,setTerms]=useState(false)
     const navigate = useNavigate();
     const gotosignin = ()=>{
         navigate("/");
     }
     const handleLogin = (event)=>{
         event.preventDefault();
-        axios.post("https://laundry-cart-server.herokuapp.com/user/register",registerState).then((res)=>{
-                alert("successfully registered")
-                navigate("/")
-        }).catch((err)=>{
-            if(err.response.status==403){
-                alert("please enter all the details")
-            }else{
-                alert(err.response.data)
-            }
-        })
+        if(Terms){
+        //https://laundry-cart-server.herokuapp.com
+            axios.post("https://laundry-cart-server.herokuapp.com/user/register",registerState)
+            .then((res)=>{
+                    alert("successfully registered")
+                    navigate("/")
+            }).catch((err)=>{
+                console.log(err)
+                if(err.response.status===404){
+                    alert("please enter all the details")
+                }else{
+                    alert(err.response.data)
+                }
+            })
+        }
+        else{
+            alert("Please agree terms and conditons")
+        }
+
     }
     return(
         <>
@@ -56,7 +66,7 @@ const Register = ()=>{
                     <hr className="hr4"></hr>   
                 </div>
                 <div className="register-phone-input-section">
-                    <input id="phone1" type="text" placeholder="Phone" className="register-phone-input-section-section-phone" onChange={(e)=>{setregisterState({...registerState, phone: e.target.value})}}/>
+                    <input id="phone1" type="number" placeholder="Phone" className="register-phone-input-section-section-phone" onChange={(e)=>{setregisterState({...registerState, phone: e.target.value})}}/>
                     <hr className="hr5"></hr>   
                 </div>
                 <div className="register-state-input-section">
@@ -72,7 +82,7 @@ const Register = ()=>{
                     <hr className="hr8"></hr>   
                     </div>
                 <div className="register-pincode-input-section">
-                    <input id="pincode" type="text" placeholder="Pincode" className="register-pincode-input-section-pincode" onChange={(e)=>{setregisterState({...registerState, pincode: e.target.value})}}/>
+                    <input id="pincode" type="number" placeholder="Pincode" className="register-pincode-input-section-pincode" onChange={(e)=>{setregisterState({...registerState, pincode: e.target.value})}}/>
                     <hr className="hr9"></hr>   
                 </div>
                 <div className="register-password-input-section-base">
@@ -80,8 +90,8 @@ const Register = ()=>{
                     <hr className="hr10"></hr>
                 </div>
                 <div className="register-checkbox-input-section">
-                    <input  id="checkbox-register"  type="checkbox" />
-                    <label htmlFor="checkbox-register" className="checkbox-text">I agree to Terms & Condition receiving marketing and promotional materials</label>
+                    <input  id="checkbox-register"  type="checkbox" onClick={()=>{setTerms(!(Terms))}} />
+                    <label htmlFor="checkbox-register" className="checkbox-text"  >I agree to Terms & Condition receiving marketing and promotional materials</label>
                 </div>
             </form>
             <div className="register-button-container">

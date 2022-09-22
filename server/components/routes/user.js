@@ -13,13 +13,13 @@ const router = express.Router();
 //     usermodal.find({email:eyJhbGciOiJIUzI1NiJ9.cHJhbmF2.C6txS99r17Fgj5orWM3eNkJyboYfB-gLkhVrgRXDqto}).then((data)=>{res.status(200).send(data);})
     
 // });
-router.get("/register",(req,res)=>{
-    usermodal.find().then((data)=>{
-        res.status(200).send(data);
-    }).catch((err)=>{
-        res.status(400).send(err);
-    })
-});
+// router.get("/register",(req,res)=>{
+//     usermodal.find().then((data)=>{
+//         res.status(200).send(data);
+//     }).catch((err)=>{
+//         res.status(400).send(err);
+//     })
+// });
 
 router.post("/register", async (req, res)=> {
     if(await checkExistingUser(req.body.email)) {
@@ -28,9 +28,13 @@ router.post("/register", async (req, res)=> {
     else if (await checkExistingUser(req.body.phone)){
         res.status(401).send("Phone Number exist. Please try with different Phone Number");
     }
+    else if(!(req.body.email.includes("@"))){
+        res.status(403).send("invalid Email-id")
+    }
     else {
         generatePasswordHash(req.body.password).then((passwordHash)=> {
-            usermodal.create({name: req.body.name,
+            usermodal.create({
+                                name: req.body.name,
                                 email : req.body.email,
                                 phone: req.body.phone,
                                 password: passwordHash,
@@ -39,11 +43,11 @@ router.post("/register", async (req, res)=> {
                                 state: req.body.state,
                                 pincode: req.body.pincode
                             })
-                            .then((req)=> { 
-                                res.status(200).send(`${req.body.name} added successfully`); 
+                            .then((req)=> {
+                                res.status(200).send(`${req.name} added successfully`); 
                             }).catch((err)=> {
-                                res.status(403).send(err.message)
-            })
+                                res.status(404).send(err.message)
+                            })
         });
     }
     
@@ -57,11 +61,11 @@ router.post("/login", async (req, res)=> {
                     const authToken = jwt.sign(userData[0].email, process.env.SECRET_KEY);
                     res.status(200).send({authToken});
                 } else {
-                    res.status(400).send("Invalid Password");
+                    res.status(401).send("Invalid Password");
                 }
             })
         } else {
-            res.status(400).send("Unauthorized user");
+            res.status(403).send("Unauthorized user");
         }
     })
 });

@@ -81,143 +81,163 @@
     border: 1px solid;
     cursor: pointer;
 }
-    .signin-container-2 {
-        top: 100px;
-        left: 730px;
-        width: 702px;
-        height: 769px;
-    /* UI Properties */
-        background: #B9C0FD1A 0% 0% no-repeat padding-box;
-        opacity: 1;
-        position: absolute;
-    }
+.signin-container-2 {
+    top: 100px;
+    left: 730px;
+    width: 702px;
+    height: 769px;
+/* UI Properties */
+    background: #B9C0FD1A 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+}
 
-    .signin-12 {
-        top: 170px;
-        left: 154px;
-        width: 128px;
-        height: 44px;
-    /* UI Properties */
-        text-align: left;
-        letter-spacing: 1.28px;
-        color: #4552C1;
-        text-transform: uppercase;
-        opacity: 1;
-        position: absolute;
-        font-size: xx-large;
-    }
+.signin-12 {
+    top: 170px;
+    left: 154px;
+    width: 128px;
+    height: 44px;
+/* UI Properties */
+    text-align: left;
+    letter-spacing: 1.28px;
+    color: #4552C1;
+    text-transform: uppercase;
+    opacity: 1;
+    position: absolute;
+    font-size: xx-large;
+}
 
-    .input-section {
-        top: 305px;
-        left: 156px;
-        width: 322px;
-        height: 27px;
-    /* UI Properties */
-        text-align: left;
-        font: normal normal normal 17px/27px Open Sans;
-        letter-spacing: 0.6px;
-        color: #77838F;
-        opacity: 1;
-        position: absolute;
-    }
-    
-    #email {
-        top: 372px;
-        left: 865px;
-        width: 322px;
-        height: 27px;
-        text-align: left;
-        font: normal normal normal 17px/27px Open Sans;
-        letter-spacing: 0.6px;
-        color: #77838F;
-        border-style: none;
-        opacity: 1;
-        background: #B9C0FD1A 0% 0% no-repeat padding-box;
-    }
-    .hr1 {
-        position: relative;
-        left: 1px;
-    }
+.input-section {
+    top: 305px;
+    left: 156px;
+    width: 322px;
+    height: 27px;
+/* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+    position: absolute;
+}
 
-    #password {
-        top: 387px;
-        left: 155px;
-        width: 322px;
-        height: 27px;
-    /* UI Properties */
-        text-align: left;
-        font: normal normal normal 17px/27px Open Sans;
-        letter-spacing: 0.6px;
-        color: #77838F;
-        opacity: 1;
-        position: absolute;
-        background: #B9C0FD1A 0% 0% no-repeat padding-box;
-        border-style: none;
-    }
-    .hr2 {width: 324px;position: absolute;top: 417px;left: 155px;}
-    .pass12 {
-        top: 410px;
-        left: 344px;
-        width: 140px;
-        height: 22px;
-    /* UI Properties */
-        text-align: left;
-        font: normal normal medium 16px/26px Avenir;
-        letter-spacing: 0.64px;
-        color: #4552C1;
-        text-transform: capitalize;
-        opacity: 1;
-        position: absolute;
-    }
-    .vl {
-        border-left: 1px solid;
-        height: 200px;
-        position: absolute;
-        top: 261px;
-    }
+#email {
+    top: 372px;
+    left: 865px;
+    width: 322px;
+    height: 27px;
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    border-style: none;
+    opacity: 1;
+    background: #B9C0FD1A 0% 0% no-repeat padding-box;
+}
+.hr1 {
+    position: relative;
+    left: 1px;
+}
 
-    .signin-button-container {
-        top: 538px;
-        left: 246px;
-        width: 150px;
-        height: 50px;
-    /* UI Properties */
-        background: #4552C1 0% 0% no-repeat padding-box;
-        border-radius: 4px;
-        opacity: 1;
-        position: absolute;
-    }
-    .signin-button {
-        top: 0px;
-        left: 0px;
-        width: 150px;
-        height: 50px;
-    /* UI Properties */
-        text-align: center;
-        font: normal normal bold 15px/20px Open Sans;
-        letter-spacing: 0.3px;
-        color: #FFFFFF;
-        background: #4552C1 0% 0% no-repeat padding-box;
-        opacity: 1;
-        border-radius: 4px;
-        position:absolute;
-        cursor: pointer;
-    }
-    .padlock-container {
-        position: absolute;
-        bottom: 171px;
-        left: 213px;
-    }
-    .input-section-error-state {
-        top: 10px;
-        left: 139px;
-        width: 207px;
-        height: 22px;
-    /* UI Properties */
-        text-align: left;
-        font: italic normal normal 12px/27px Open Sans;
-        letter-spacing: 0.42px;
-        position: absolute;
-        color: #EF1A1A;
-        opacity: 1;
-    }
+#password {
+    top: 387px;
+    left: 155px;
+    width: 322px;
+    height: 27px;
+/* UI Properties */
+    text-align: left;
+    font: normal normal normal 17px/27px Open Sans;
+    letter-spacing: 0.6px;
+    color: #77838F;
+    opacity: 1;
+    position: absolute;
+    background: #B9C0FD1A 0% 0% no-repeat padding-box;
+    border-style: none;
+}
+.hr2 {
+    width: 324px;
+    position: absolute;
+    top: 417px;
+    left: 155px;
+}
+.pass11 {
+    top: 400px;
+    left: 325px;
+    width: 200px;
+    height: 22px;
+/* UI Properties */
+    text-align: left;
+    font: italic normal normal 12px/27px Open Sans;
+    letter-spacing: 0.42px;
+    position: absolute;
+    color: #EF1A1A;
+    opacity: 1;
+}
+.pass12 {
+    top: 420px;
+    left: 344px;
+    width: 140px;
+    height: 22px;
+/* UI Properties */
+    text-align: left;
+    font: normal normal medium 16px/26px Avenir;
+    letter-spacing: 0.64px;
+    color: #4552C1;
+    text-transform: capitalize;
+    opacity: 1;
+    position: absolute;
+    cursor: pointer;
+}
+.vl {
+    border-left: 1px solid;
+    height: 200px;
+    position: absolute;
+    top: 261px;
+}
+
+.signin-button-container {
+    top: 538px;
+    left: 246px;
+    width: 150px;
+    height: 50px;
+/* UI Properties */
+    background: #4552C1 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+    position: absolute;
+}
+.signin-button {
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    height: 50px;
+/* UI Properties */
+    text-align: center;
+    font: normal normal bold 15px/20px Open Sans;
+    letter-spacing: 0.3px;
+    color: #FFFFFF;
+    background: #4552C1 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border-radius: 4px;
+    position:absolute;
+    cursor: pointer;
+}
+.padlock-container {
+    position: absolute;
+    bottom: 171px;
+    left: 213px;
+    cursor: pointer;
+}
+.input-section-error-state {
+    top: 10px;
+    left: 90px;
+    width: 250px;
+    height: 22px;
+/* UI Properties */
+    text-align: left;
+    font: italic normal normal 12px/27px Open Sans;
+    letter-spacing: 0.42px;
+    position: absolute;
+    color: #EF1A1A;
+    opacity: 1;
+}
