@@ -59,7 +59,8 @@ router.post("/login", async (req, res)=> {
             bcrypt.compare(req.body.password, userData[0].password).then((val)=> {
                 if(val) {
                     const authToken = jwt.sign(userData[0].email, process.env.SECRET_KEY);
-                    res.status(200).send({authToken});
+                    let username=userData[0].name
+                    res.status(200).send({authToken,username});
                 } else {
                     res.status(401).send("Invalid Password");
                 }
