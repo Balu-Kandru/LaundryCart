@@ -1,8 +1,12 @@
 import { useState } from "react"
 import "./style.css"
 import axios from "axios"
+import Moment from 'moment';
 
 const Summary=(props)=>{
+    const date = Moment().format("MMM Do YYYY, h:mm");
+    const number=localStorage.getItem("num");
+    const zeroPad = (num) => String(num).padStart(4, '0')
 
     const handlesubmit=()=>{
         if(add){
@@ -18,11 +22,13 @@ const Summary=(props)=>{
             },
             data: {producttype: props.state, 
                 subtotal: props.subtotal,
-                orderid:"ORD0001",
-                datetime:"03 Aug 2022 ,12:12"
+                orderid:"ORD"+zeroPad(number),
+                datetime:date
             }
         }).then((res)=>{
-            console.log(res)
+            let ans=(parseInt(localStorage.getItem("num"))+parseInt(1))
+            //console.log(ans)
+            localStorage.setItem("num",ans)
         }).catch((err)=>{
             console.log(err)
         })

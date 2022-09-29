@@ -55,7 +55,6 @@ const Productlist=()=>{
     const [summpage, setsummpage]=useState(false)//summary
     const [state,setState]=useState([])
     const [confirm,setconfirm]=useState(false)//alert
-
     const subtotal=state.reduce((v,obj)=>v +obj.price,0)
 
     const handlecancel=()=>{

@@ -2,7 +2,6 @@ import './pastorders.css'
 import Header from "../common/header"
 import NavBar from "../common/navbar"
 import Footer from "../common/footer"
-import Search from "../common/search"
 import { getToken } from '../../utility/utility'
 
 import { useNavigate } from "react-router-dom";
@@ -19,13 +18,19 @@ const Pastorders =()=>{
         const [summ,setsumm] = useState(false);
         const [price,setprice] =useState(null);
         const [cancelid,setcancelid] = useState("");
+        // const [sort,setsort]=useState(false)
+        const [sortedArr,setsorted]=useState(orders)
+        const [id,setid]=useState("")
+        const [sortType, setSortType] = useState('price');
+
+
         const gotocreateorder = ()=>{
             navigate("/order");
         }
-        const cancelOrderfunc=(id)=>{
+        const cancelOrderfunc=()=>{
             let token=getToken()
             let header={Authorization:token}
-            axios.delete(`https://laundry-cart-server.herokuapp.com/order/cancel/${id}`,{headers:header})
+            axios.delete(`https://laundry-cart-server.herokuapp.com/order/cancel/${cancelid}`,{headers:header})
             .then(function (response) {
                 if(response.status===200){           
                     window.location.reload();
@@ -35,43 +40,62 @@ const Pastorders =()=>{
         }
         useEffect(()=>{
         let token=getToken()
-        
         let header={Authorization:token}
-        
         axios.get('https://laundry-cart-server.herokuapp.com/order/history',{headers:header})
         .then(function (response) {
             setorders(response.data)
+            setsorted(response.data)
             }).catch((err)=> {
                 console.log(err)
             })
-        
-        
         },[]);
+
+        useEffect(()=>{
+            const handleSort=(type)=>{
+                const types={
+                    orderid:"orderid",
+                    date:"datetime",
+                    subtotal:"subtotal"
+                }
+                const sortProperty=types[type]
+                const sorted=[...orders].sort((a,b)=>a[sortProperty] - b[sortProperty])
+                setsorted(sorted)
+                //console.log(sorted)
+            }
+            handleSort(sortType)
+        },[sortType])
         return( 
- 
         <>
         
         <Header/>
         <NavBar/>
-        <Search/>
+        <div className='search-img'>
+        <select onChange={(e) => setSortType(e.target.value)}> 
+        <option value="orderid">orderid</option>
+        <option value="datetime">date</option>
+        <option value="subtotal">price</option>
+
+        </select>
+        </div>
+        {/* <Search/> */}
         
         <div><h2 className='topdiv' >Orders | {orders.length}</h2></div>
         <button className="goto" onClick={gotocreateorder}>Create</button>
         <div className='page-titlebar'>
-            <span className='orderid'>Order Id</span>
-            <span className='orderdatetime'>Order Date & Time</span>
+            <span className='orderid' >Order Id</span>
+            <span className='orderdatetime' >Order Date & Time</span>
             <span className='StoreLocation' >Store Location</span>
             <span className='City'>City</span>
             <span className='StorePhone'>Store Phone</span>
-            <span className='TotalItems'>Total Items</span>
-            <span className='Price'>Price</span>
+            <span className='TotalItems' >Total Items</span>
+            <span className='Price' >Price</span>
             <span className='Status'>Status</span>
             <span className='canc'>   </span>
             <span className='view'>view</span>
             
         </div>
         
-                {orders.map((order,key)=>(
+                {sortedArr.map((order,key)=>(
                     <div className='page-titlebar2 ' key={key}>
                     <span className='orderid2'>{order.orderid}</span>
                     <span className='orderdatetime2'>{order.datetime}</span>
@@ -85,6 +109,7 @@ const Pastorders =()=>{
                 className="openModalBtn"
                 onClick={() => { 
                   setcancelid(order._id)
+                  setid(order.orderid)
                   setModalOpen(true);
                 }}>Cancel order</button>
                     <img src={eyeIcon} className='view2' alt="err" onClick={() => {
@@ -94,7 +119,7 @@ const Pastorders =()=>{
         
                 </div>
                  ))} 
-                 {modalOpen && <Modal setOpenModal={setModalOpen} cancelid={cancelid} cancelOrderfunc={cancelOrderfunc} />}{summ && <Summary orders={price}closesummary={setsumm} />}
+                 {modalOpen && <Modal setOpenModal={setModalOpen} id={id} cancelid={cancelid} cancelOrderfunc={cancelOrderfunc} />}{summ && <Summary orders={price}closesummary={setsumm} />}
                  
 
         <Footer/>

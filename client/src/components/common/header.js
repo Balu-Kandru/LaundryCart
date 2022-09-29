@@ -7,6 +7,7 @@ const Header=()=>{
     const handlelogout = ()=>{
         localStorage.setItem("authorization","");
         localStorage.setItem("username","")
+        localStorage.setItem("num",1)
         navigate("/");
     }
     return (

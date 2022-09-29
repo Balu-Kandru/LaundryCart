@@ -31,9 +31,10 @@ const Signin = ()=>{
     
     const handleLogin = (event)=>{
         event.preventDefault();;
-        axios.post("http://localhost:3001/user/login",signupState).then((logindata)=>{
+        axios.post("https://laundry-cart-server.herokuapp.com/user/login",signupState).then((logindata)=>{
             localStorage.setItem("authorization",logindata.data.authToken);
             localStorage.setItem("username",logindata.data.username);
+            localStorage.setItem("num",1)
             navigate("/order/history")
         }).catch((err)=>{
             // alert("your email/phonenumber unauthorized");
