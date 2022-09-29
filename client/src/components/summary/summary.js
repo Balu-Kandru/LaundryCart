@@ -1,5 +1,5 @@
 import Modal from "../modals/modal";
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "./summary.css";
 import { getToken } from "../../utility/utility";
 import axios from "axios";

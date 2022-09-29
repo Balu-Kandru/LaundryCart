@@ -6,21 +6,33 @@ h2{
     margin-top: 20px;
     font-family: sans-serif;
     }
+.sort_opt{
+    top: 119px;
+    left: 1204px;
+    opacity: 1;
+    position: absolute;
+}
+.opt{
+    width: 107px;
+    height: 32px;
+    color: #5861AE;
+    cursor: pointer;
+}
     
-    .goto{
+.goto{
     left: 1070px;
     top: -58px;
     width: 107px;
     height: 32px;
     color: #5861AE;
     cursor: pointer;
-    
+
     /* UI Properties */
     border: 1px solid #5861AE;
     border-radius: 4px;
     opacity: 1;
     position: relative;
-    }
+}
     .page-titlebar{
         top: 172px;
         left: 99px;
@@ -84,6 +96,7 @@ h2{
         opacity: 1;
         position:relative;
     }
+
     
     .City{
         top: 9px;

@@ -69,13 +69,12 @@ const Pastorders =()=>{
         
         <Header/>
         <NavBar/>
-        <div className='search-img'>
-        <select onChange={(e) => setSortType(e.target.value)}> 
-        <option value="orderid">orderid</option>
-        <option value="datetime">date</option>
-        <option value="subtotal">price</option>
-
-        </select>
+        <div className='sort_opt'>
+            <select className='opt' onChange={(e) => setSortType(e.target.value)}> 
+                <option value="orderid">orderid</option>
+                <option value="datetime">date</option>
+                <option value="subtotal">price</option>
+            </select>
         </div>
         {/* <Search/> */}
         
