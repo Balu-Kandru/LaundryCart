@@ -6,6 +6,7 @@ const multer = require("multer")();
 const userController = require("./components/routes/user");
 const orderController=require("./components/routes/order");
 const bodyParser = require("body-parser");
+const { port } = require("./components/utility");
 const app=express();
 
 // parsers
@@ -16,13 +17,12 @@ app.use(bodyParser.json())
 app.use(multer.array());
 app.use(cors())
 
-
-// listening port
-app.listen(process.env.PORT,()=>{
-    console.log("server started @ : " +process.env.PORT);
-});
 // db connection
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(dbUrl, (res)=> {
+    console.log("Successfully connected to db");
+}, (err)=> {
+    console.log(err)
+});
 
 
 // base path;
@@ -34,3 +34,8 @@ app.get("/",(req,res)=>{
 // middleware
 app.use("/user",userController);
 app.use("/order",orderController)
+
+// listening port
+app.listen(port,()=>{
+    console.log("server started @ : " +process.env.PORT);
+});

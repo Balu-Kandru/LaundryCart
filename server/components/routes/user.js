@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const {checkExistingUser,generatePasswordHash} = require("../utility");
+const {checkExistingUser,generatePasswordHash, secretKey} = require("../utility");
 const usermodal = require("../modals/usermodal");
 
 
@@ -58,7 +58,7 @@ router.post("/login", async (req, res)=> {
         if(userData.length) {
             bcrypt.compare(req.body.password, userData[0].password).then((val)=> {
                 if(val) {
-                    const authToken = jwt.sign(userData[0].email, process.env.SECRET_KEY);
+                    const authToken = jwt.sign(userData[0].email, secretKey);
                     let username=userData[0].name
                     res.status(200).send({authToken,username});
                 } else {

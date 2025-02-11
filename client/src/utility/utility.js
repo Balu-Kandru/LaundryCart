@@ -30,9 +30,12 @@ const Isuserloggedin = ({children})=> {
     //""
     return (
         <>
-        {token.length ? <Navigate to="/order/history"/>:children}
+        {token && token.length ? <Navigate to="/order/history"/> : children}
         </>
     )
 }
 
-export {isAuthenticated,getToken,Protected,Isuserloggedin}
+const baseUrl = process.env.baseUrl || 'http://localhost:3001';
+
+
+export { isAuthenticated, getToken, Protected, Isuserloggedin, baseUrl }
